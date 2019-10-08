@@ -1,4 +1,4 @@
-"### If there's a problem search *WARNING* first
+" ### If there's a problem search *WARNING* first
 "### Changes listed most recent first below:
 "useful: tab help buffer, tabexplore, can keep folded view of file in a
 "separate tab and mark the buffer there (ma) then go back ('a) in the full
@@ -74,7 +74,10 @@ set undodir=~/undodir
 
 
 "in insert mode use ;; to exit
-inoremap ;; <Esc>
+inoremap jk <Esc>
+
+
+
 
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
@@ -138,9 +141,9 @@ endfor
 
 "moving up and down without the ==, moves as is, with tabs->spaces seems to
 "work best
-nnoremap <Down> :m .+1<CR>
-nnoremap <Up> :m .-2<CR>
+nnoremap <S-j> :m .+1<CR>
+nnoremap <S-k> :m .-2<CR>
 inoremap <Down> <Esc>:m .+1<CR>gi
 inoremap <Up> <Esc>:m .-2<CR>gi
-vnoremap <Down> :m '>+1<CR>gv
-vnoremap <Up> :m '<-2<CR>gv
+vnoremap <S-j> :m '>+1<CR>gv
+vnoremap <S-k> :m '<-2<CR>gv
