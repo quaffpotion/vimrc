@@ -91,8 +91,8 @@ noremap <C-u>  <C-u><C-L>
 let mapleader = ","
 nnoremap <leader>ev :e ~/.vimrc<CR>
 nnoremap <leader>sv :w<CR>:so $MYVIMRC<CR>
-nnoremap <leader>c :w<CR>:!pdflatex %:p<CR> 
-nnoremap <leader>dd <C-w>n:e ~/.vim/plugged/quicktex/ftplugin/tex/default_keywords.vim<CR>
+nnoremap <leader>c :w<CR>:mks! session.vim<CR>:!pdflatex %:p<CR> 
+nnoremap <leader>dd :tabe ~/.vim/plugged/quicktex/ftplugin/tex/default_keywords.vim<CR>
 
 "lists buffers and writes buffer goto command, b accepts both numbers and
 "partial filenames w/ tab completion!
@@ -147,3 +147,17 @@ inoremap <Down> <Esc>:m .+1<CR>gi
 inoremap <Up> <Esc>:m .-2<CR>gi
 vnoremap <S-j> :m '>+1<CR>gv
 vnoremap <S-k> :m '<-2<CR>gv
+
+
+nnoremap k gk
+nnoremap j gj
+
+
+
+"(The below is not compatible with vim sessions sadly)
+"Automatically save folds when you save
+" augroup AutoSaveFolds
+"   autocmd!
+"   autocmd BufWinLeave * mkview
+"   autocmd BufWinEnter * silent loadview
+" augroup END
